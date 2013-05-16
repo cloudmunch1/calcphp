@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="wordpress" default="package" basedir=".">      
+       
+  	<target name="package" description="" depends="clean">    
+		
+		<zip destfile="${basedir}/wordpress_deploy.zip">
+			<fileset dir="${basedir}" includes="wordpress/**" excludes="buildWP.xml,*.cloudbox,*.json"/>   
+		</zip>
+	</target>
+	<target name="clean" description="">
+		<delete dir="${basedir}" verbose="true" includes="wordpress_deploy.zip">
+		</delete>
+	</target>	
+ 
+
+</project>                 
